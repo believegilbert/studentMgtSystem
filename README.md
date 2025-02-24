@@ -6,6 +6,7 @@ A simple react project where we List students, View student details on a separat
 **(iii).** tailwindCSS
 **(iv).** dummy json database to store student details
 **(v).**  redux for state management 
+**(vi).**  material ui for UI 
 #### How to consume
 **(i).**   clone git repository into your preferred location folder
 **(ii).**  run **npm install** in your project terminal
