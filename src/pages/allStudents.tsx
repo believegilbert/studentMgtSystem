@@ -103,8 +103,9 @@ const handleDelete = (id : string) => {
   return (
     <div className="min-h-screen">
 
-      <h1 className="text-[#714326] text-[3rem] text-center mt-[10%]">STUDENTS</h1>
-      <div className="text-center">      <input placeholder="Search @example: John Doe " className="w-[300px] border-[#efefef] rounded-[5px] p-[10px] outline-none"/>
+      <h1 className="text-[#714326] text-[3rem] text-center mt-[8%] mb-[4rem]">STUDENTS</h1>
+      <div className="text-center"> 
+     <input placeholder="Search @example: John Doe " className="w-[300px] sm:w-[500px] md:w-[600px] rounded-[1rem] bg-[#efefef] p-[10px] outline-none"/>
       </div>
   
 

@@ -4,18 +4,30 @@ import { FaArrowLeft } from "react-icons/fa"
 
 const Student: FunctionComponent = () => {
   return (
-    <div className="h-[100vh] text-[#714326] text-[1.1rem]">
+    <div className="h-[100vh] text-[#714326] text-[16px] sm:text-[18px]">
     
 <Link to="/students">
           <FaArrowLeft className="text-[#714326] text-[18px] mt-[3rem] ml-[1.5rem] cursor-pointer" />
         </Link>
-        <div className="grid justify-center items-center">
+        <div className="grid justify-center items-center mt-[5rem]">
             <img src="/profile.svg" width=""className=" cursor-pointer" />
-     <p className="">First name: <span className="ml-[5rem]">Mike</span></p>
-     <p className="">Last name:<span className="ml-[5rem]">Jane</span></p>
-     <p className="">Age:<span className="ml-[8rem]">29</span></p>
-     <p className="">Address:<span className="ml-[5rem]">Lagos</span></p>
-     <p className="">Id:<span className="ml-[5rem]">U2009/55edro</span></p>
+            <div className="flex justify-between mt-[2rem]">
+              <div>
+                             <p className="">First name: </p>
+     <p className="">Last name:</p>
+     <p className="">Age:</p>
+     <p className="">Address:</p>
+     <p className="">Id:</p>
+    
+              </div>
+  <div>
+    <p className="">Mike</p>
+    <p className="">Jane</p>
+    <p className="">29</p>
+    <p className="">Lagos</p>
+    <p className="">U2009/55edro</p>
+  </div>
+            </div>
     
         </div>
     </div>
