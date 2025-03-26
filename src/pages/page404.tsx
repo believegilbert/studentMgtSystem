@@ -12,7 +12,7 @@ const Page404: FunctionComponent = () => {
       <h1 className="mb-[1rem] sm:mb-[2rem]"><span className="font-bold text-[1.3rem] sm:text-[1.7rem] md:text-[2.2rem]">404</span> - Page Not Found</h1>
       <p className="mb-[1.5rem] sm:mb-[2.5rem]">We're sorry, but the page you are looking for does not exist.</p>
       <Link to="/">
-      <a className="bg-[#714326] text-[white] p-[5px] sm:p-[7px] px-[14px] sm:px-[18px] rounded-2xl">Go back to Home</a> 
+      <span className="bg-[#714326] text-[white] p-[5px] sm:p-[7px] px-[14px] sm:px-[18px] rounded-2xl">Go back to Home</span> 
       </Link>
       </div>
    

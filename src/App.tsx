@@ -16,6 +16,12 @@ import EditStudent from "./pages/editStudent";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Page404 from "./pages/page404";
+import AddStudent from "./pages/addstudent";
+
+//import our user from the redux store
+import { useSelector } from "react-redux";
+import store from "./redux/store";
+
 
 //importing all our components
 import Navbar from "./components/Navbar";
@@ -23,6 +29,11 @@ import Footer from "./components/Footer";
 import { FunctionComponent } from "react";
 
 function App() {
+  //interface for the user
+type RootState = ReturnType<typeof store.getState>;
+//getting the user state from the redux store
+  const user = useSelector((state:RootState) => state.user);
+
   //defining the layout of our app/website
   const Layout: FunctionComponent = () => {
     return (
@@ -44,9 +55,10 @@ function App() {
       path: "/",
       element: <Layout />, //specifying we are using the layout componen
       children: [
-        { path: "/students", element: <AllStudents /> }, //specifying the all students route
-        { path: "/students/:id", element: <Student /> }, //specifying the route for each student
-        { path: "/students/:id/edit", element: <EditStudent /> }, //specifying the edit student route
+        { path: "/students", element: user.currentUser ? <AllStudents /> : <Navigate to="/login" /> }, //specifying the all students route
+        { path: "/students/:id", element: user.currentUser ? <Student /> : <Navigate to="/login" /> }, //specifying the route for each student
+        { path: "/students/:id/edit", element: user.currentUser ? <EditStudent /> : <Navigate to="/login" /> }, //specifying the edit student route
+        { path: "/students/add", element: user.currentUser ? <AddStudent />: <Navigate to="/login" /> }, //specifying the route to add a student
         { path: "/", element: <Home /> }, //specifying the homepage route
       ],
     },

@@ -1,8 +1,35 @@
-import { FunctionComponent } from "react"
+import { FunctionComponent, useEffect, useState  } from "react"
 import { Link } from "react-router-dom"
 import { FaArrowLeft } from "react-icons/fa"
+import { publicRequest } from "../requestMethod"
+
+interface Student {
+  _id: number;
+  firstName: string;
+  lastName: string;
+  country: string;
+  grade: number;
+  age: number;
+} 
 
 const Student: FunctionComponent = () => {
+  const [student, setStudent] = useState<Student>({} as Student)
+const studentId = location.pathname.split("/")[2] //get the student id from the url
+
+//get the student details from the database
+useEffect(() =>{
+  const findStudent = async() => {
+    try {
+    const res = await publicRequest.get("/find/"+ studentId)
+     setStudent(res.data)
+    } catch (error:unknown) {
+      console.log(error)
+    }
+  }
+  //call the function to get the student details
+  findStudent()
+  
+},[])
   return (
     <div className="h-[100vh] text-[#714326] text-[16px] sm:text-[18px]">
     
@@ -11,21 +38,21 @@ const Student: FunctionComponent = () => {
         </Link>
         <div className="grid justify-center items-center mt-[5rem]">
             <img src="/profile.svg" width=""className=" cursor-pointer" />
-            <div className="flex justify-between mt-[2rem]">
-              <div>
-                             <p className="">First name: </p>
-     <p className="">Last name:</p>
-     <p className="">Age:</p>
-     <p className="">Address:</p>
-     <p className="">Id:</p>
+            <div className="flex justify-between mt-[3rem]">
+              <div className="mr-[3rem]">
+    <p className="pb-[1rem]">First name: </p>
+     <p className="pb-[1rem]">Last name:</p>
+     <p className="pb-[1rem]">Age:</p>
+     <p className="pb-[1rem]">Address:</p>
+     <p className="pb-[1rem]">Id:</p>
     
               </div>
-  <div>
-    <p className="">Mike</p>
-    <p className="">Jane</p>
-    <p className="">29</p>
-    <p className="">Lagos</p>
-    <p className="">U2009/55edro</p>
+  <div className="ml-[3rem]">
+    <p className="pb-[1rem]">{student.firstName}</p>
+    <p className="pb-[1rem]">{student.lastName}</p>
+    <p className="pb-[1rem]">{student.age}</p>
+    <p className="pb-[1rem]">{student.country}</p>
+    <p className="pb-[1rem]">{student._id}</p>
   </div>
             </div>
     
