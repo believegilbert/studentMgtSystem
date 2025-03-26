@@ -1,7 +1,7 @@
 # StudentManagementSystem
 A simple react project where we List students, View student details on a separate page, update student details through a form and manage application state 
 #### Technologies
-###### note: I built a backend API connected to mongodb to serve student data(https://github.com/valanboy/studentManagementSystemAPI) & authentication is not done in the backend because this is just a mini-frontend project
+###### note: I built a backend API connected to mongodb to serve student data (https://github.com/valanboy/studentManagementSystemAPI) & authentication is not done in the backend because this is just a mini-frontend project
 ###### note: never authenticate your app/website on the frontend alone (not safe)
 **(i).**   react.js using vite
 **(ii).**  typescript
