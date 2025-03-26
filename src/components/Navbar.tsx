@@ -71,7 +71,7 @@ setShowButton(!showButton)
           {/* login button */}
           <div className="hidden sm:block">
           {user.currentUser ? <Link to='/'><button className="
-          cursor-pointer text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] py-3 text-[white] 
+          cursor-pointer text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] hover:bg-[white] outline hover:text-[#714326] border hover:border-brown-500 py-3 text-[white] 
            border-none rounded-lg px-[1.2rem] hover:text-[0.9rem] p-[0.75rem] bg-[#714326] font-semibold"
            onClick={handleLogout}>
             Log out
@@ -79,7 +79,7 @@ setShowButton(!showButton)
           </Link>: 
            <Link to="/login">
             <button className="
-          cursor-pointer text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] py-3 text-[white]  border-none rounded-full px-[1.2rem] hover:text-[0.9rem] p-[0.75rem] bg-[#714326] font-semibold">
+          cursor-pointer text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] hover:bg-[white] outline border hover:text-[#714326] hover:border-brown-500 py-3 text-[white]  border-none rounded-full px-[1.2rem] hover:text-[0.9rem] p-[0.75rem] bg-[#714326] font-semibold">
             Login
           </button>
           </Link>}
