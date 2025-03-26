@@ -58,6 +58,7 @@ const AllStudents: FunctionComponent = () => {
   const handleDelete = (id: string) => {
     publicRequest.delete(`/${id}`);
     window.location.reload();
+    
   };
 
   const columns: GridColDef[] = [
@@ -77,7 +78,7 @@ const AllStudents: FunctionComponent = () => {
       description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 110,
-      valueGetter: (value, row) =>
+      valueGetter: (_, row) =>
         `${row.firstName || ""} ${row.lastName || ""}`,
     },
     { field: "grade", headerName: "grade", width:110 },
