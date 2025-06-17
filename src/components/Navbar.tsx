@@ -37,7 +37,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="hover:text-[#422716] hover:scale-105 transition"
+                className=" hover:scale-105 transition"
               >
                 Home
               </Link>
@@ -45,12 +45,12 @@ const Navbar = () => {
             <li>
               <Link
                 to="/students"
-                className="hover:text-[#422716] hover:scale-105 transition"
+                className=" hover:scale-105 transition"
               >
                 Students
               </Link>
             </li>
-            <li className="hover:text-[#422716] hover:scale-105 transition">
+            <li className=" hover:scale-105 transition">
               Contact
             </li>
           </ul>
@@ -91,7 +91,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/"
-                      className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[35px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
+                      className=" hover:scale-105 active:bg-[white] px-[35px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
                     >
                       <button onClick={() => setShowButton(false)}> Home</button>
                      
@@ -100,12 +100,12 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/students"
-                      className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
+                      className=" hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
                     >
                      <button onClick={() => setShowButton(false)}>Students</button> 
                     </Link>
                   </li>
-                  <li className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition">
+                  <li className=" hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition">
                    <button onClick={() => setShowButton(false)}>Contact</button> 
                   </li>
                 </ul>
@@ -125,7 +125,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/"
-                      className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[35px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
+                      className=" hover:scale-105 active:bg-[white] px-[35px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
                     >
                       <button onClick={() => setShowButton(false)}>Home</button>
                     </Link>
@@ -133,12 +133,12 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/students"
-                      className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
+                      className=" hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
                     >
                      <button onClick={() => setShowButton(false)}>Students</button> 
                     </Link>
                   </li>
-                  <li className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition">
+                  <li className=" hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition">
                    <button onClick={() => setShowButton(false)}>Contact</button> 
                   </li>
                 </ul>
