@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -22,10 +23,12 @@ const Home = () => {
           <h3 className="text-[white] text-[1.1rem] sm:text-[1.2rem] p-[5rem] font-bold">Let's GO!</h3>
         </div>
  <div className="text-center w-[]">
-  <button className="text-[white] text-[15px] mt-[10%] bg-[#714326] hover:bg-[white] hover:text-[#714326] border-none p-[1rem] px-[1.85rem] sm:px-[2.5rem] md:px-[4.5rem] rounded-full mr-[2%]">
+  <Link to="/login">
+  <button className="text-[white] text-[15px] mt-[10%] bg-[#714326] hover:bg-[white] active:outline-[#714326] active:bg-[white] active:text-[#714326] hover:text-[#714326] border-none p-[1rem] px-[1.85rem] sm:px-[2.5rem] md:px-[4.5rem] rounded-full mr-[2%]">
           
           Get Started
         </button>
+        </Link>
  </div>
         
       </div>

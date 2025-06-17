@@ -31,28 +31,29 @@ useEffect(() =>{
   
 },[])
   return (
-    <div className="h-[100vh] text-[#714326] text-[16px] sm:text-[18px]">
+    <div className="h-[100vh] text-[#714326] text-sm sm:text-[18px]">
     
 <Link to="/students">
           <FaArrowLeft className="text-[#714326] text-[18px] mt-[3rem] ml-[1.5rem] cursor-pointer" />
         </Link>
-        <div className="grid justify-center items-center mt-[5rem]">
-            <img src="/profile.svg" width=""className=" cursor-pointer" />
-            <div className="flex justify-between mt-[3rem]">
+        <div className="flex justify-center"><img src="/profile.svg" width=""className=" cursor-pointer w-[200px] sm:w-full mt-[3rem]" /></div> 
+        <div className="grid justify-center items-center mt-[3rem]">
+           
+            <div className="flex justify-between">
               <div className="mr-[3rem]">
-    <p className="pb-[1rem]">First name: </p>
-     <p className="pb-[1rem]">Last name:</p>
-     <p className="pb-[1rem]">Age:</p>
-     <p className="pb-[1rem]">Address:</p>
-     <p className="pb-[1rem]">Id:</p>
+    <p className="pb-[1rem] font-medium">First name: </p>
+     <p className="pb-[1rem] font-medium">Last name:</p>
+     <p className="pb-[1rem] font-medium">Age:</p>
+     <p className="pb-[1rem] font-medium">Address:</p>
+     <p className="pb-[1rem] font-medium">Id:</p>
     
               </div>
-  <div className="ml-[3rem]">
+  <div className="sm:ml-[3rem] flex flex-col items-center">
     <p className="pb-[1rem]">{student.firstName}</p>
     <p className="pb-[1rem]">{student.lastName}</p>
     <p className="pb-[1rem]">{student.age}</p>
     <p className="pb-[1rem]">{student.country}</p>
-    <p className="pb-[1rem]">{student._id}</p>
+    <p className="pb-[1rem] break-all w-[140px] sm:w-full">{student._id}</p>
   </div>
             </div>
     

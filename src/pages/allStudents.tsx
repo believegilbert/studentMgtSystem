@@ -4,7 +4,6 @@ import Paper from "@mui/material/Paper";
 import { FaTrash, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { publicRequest } from "../requestMethod";
-import ThemeToggle from "../components/themeToggle";
 
 const AllStudents: FunctionComponent = () => {
   //create a state to hold all students data
@@ -172,10 +171,10 @@ const AllStudents: FunctionComponent = () => {
   return (
     <div className="min-h-screen mb-[1rem]">
 
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
   
         
-      <h1 className="text-[#714326] text-[3rem] text-center mt-[8%] mb-[4rem]">
+      <h1 className="text-[#714326] text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center mt-[8%] mb-[2rem] md:mb-[4rem]">
         STUDENTS
       </h1>
       <div className="text-center">
@@ -187,7 +186,7 @@ const AllStudents: FunctionComponent = () => {
         />
       </div>
       <Link to="/students/add">
-        <button className="hover:text-[1.1rem] hover:rounded-[1.2rem] text-white bg-[#714326] hover:bg-[#584031fd] p-[9px] px-[1.2rem] rounded-[5px] flex items-baseline cursor-pointer mt-[7%] mx-auto">
+        <button className="hover:text-[1.1rem] hover:rounded-[1.2rem] text-sm md:text-[1rem] lg:text-[1.1rem] text-white bg-[#714326] hover:bg-[#584031fd] p-[9px] px-[1.2rem] rounded-[5px] flex items-baseline cursor-pointer mt-[7%] mx-auto">
           <FaPlus className="mr-[10px] text-[14px]" />
           add student
         </button>

@@ -37,7 +37,7 @@ type RootState = ReturnType<typeof store.getState>;
   //defining the layout of our app/website
   const Layout: FunctionComponent = () => {
     return (
-      <div>
+      <div className="">
         <Navbar />
 
         <div>

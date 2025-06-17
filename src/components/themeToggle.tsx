@@ -6,6 +6,7 @@ const ThemeToggle = () => {
   useEffect(() => {
     if (darkTheme) {
       document.body.style.backgroundColor = "#1a202c";
+      document.body.style.color = "#efefef";
       
     } else {
       

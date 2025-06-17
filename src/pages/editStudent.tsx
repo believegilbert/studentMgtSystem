@@ -83,7 +83,7 @@ window.location.replace("/students")
 
       <div className="block sm:flex sm:mb-[4rem] items-center text-center text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] justify-center">
         <div className="">
-          <label htmlFor="firstname" className="">
+          <label htmlFor="firstname" className="font-medium">
             First name:
           </label>
           <br />{" "}
@@ -91,14 +91,14 @@ window.location.replace("/students")
           className="bg-[#efefef] w-[300px] p-[7px] m-[1rem] rounded-[0.5rem] border-[#efefef] outline-[#714326]" />
           <br />
           
-          <label htmlFor="age" className="">
+          <label htmlFor="age" className="font-medium">
             Age:
           </label>{" "}
           <br />
           <input name="age" onChange={handleChange} placeholder={studentData.age} className="bg-[#efefef] w-[300px] p-[7px] m-[1rem] rounded-[0.5rem] border-[#efefef] outline-[#714326]" />
           <br/>
 
-          <label htmlFor="id" className="">
+          <label htmlFor="id" className="font-medium">
             Id:
           </label>{" "}
           <br />
@@ -107,19 +107,19 @@ window.location.replace("/students")
         </div>
 
         <div className="">
-          <label htmlFor="lastname" className="">
+          <label htmlFor="lastname" className="font-medium">
             Last name:
           </label>
           <br />{" "}
           <input name="lastname" onChange={handleChange} placeholder={studentData.lastName} className="bg-[#efefef] w-[300px] p-[7px] m-[1rem] rounded-[0.5rem] border-[#efefef] outline-[#714326]" />
           <br />
-          <label htmlFor="grade" className="">
+          <label htmlFor="grade" className="font-medium">
             Grade:
           </label>
           <br />{" "}
           <input name="grade" onChange={handleChange} placeholder={studentData.grade} className="bg-[#efefef] w-[300px] p-[7px] m-[1rem] rounded-[0.5rem] border-[#efefef] outline-[#714326]" />
           <br />
-          <label htmlFor="address" className="">
+          <label htmlFor="address" className="font-medium">
             country:
           </label>
           <br />{" "}

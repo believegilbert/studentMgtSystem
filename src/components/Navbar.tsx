@@ -1,93 +1,158 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logOut } from "../redux/userReducer";
-import { HiMenu } from "react-icons/hi"
+import { HiMenu } from "react-icons/hi";
 import { useState } from "react";
-//I imported the store to get the user state type
 import store from "../redux/store";
 
 const Navbar = () => {
-  //I used the RootState type to get the user state type
   type RootState = ReturnType<typeof store.getState>;
-  //I used the useSelector hook to get the user state
-  const user = useSelector((state:RootState) => state.user);
-  const [showButton, setShowButton] = useState<boolean>(false);
-
-  //initialize the dispatch function
+  const user = useSelector((state: RootState) => state.user);
+  const [showButton, setShowButton] = useState(false);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    //I dispatched the logout action here
-     dispatch(logOut())
-  
-  }
-  const showLogoutDarkmode = () => { 
-setShowButton(!showButton)
-  }
+    dispatch(logOut());
+    setShowButton(false);
+  };
+
+  const toggleMenu = () => {
+    setShowButton((prev) => !prev);
+  };
 
   return (
-    //specifying the height of our navbar first
-    <div className="h-[6vh] w-[100%]">
-      {/* we will center the content of our navbar while making sure the width is 80% so it looks good*/}
-      <div className=" mx-[0.8rem] my-[0.8rem]">
-        {/* we will use flexbox to align the content of our navbar so that the logo, links and login will be inline and spaced evenly*/}
-        <nav className="flex items-center justify-between text-[14px]  sm:text-[17px]">
-          {/* logo */}
-          <div className="Logo">
-            <h1 className="text-[#714326] text-[20px] sm:text-[24px] select-none font-bold">SMS</h1>
-          </div>
-          {/* links */}
-          <ul className="flex justify-between list-none text-[#714326] cursor-pointer">
-            <Link to="/">
-            <li className="p-[0.5rem] hover:text-[#422716] hover:text-[1.1rem]">Home</li>
-            </Link>
-            <Link to="/students">
-            <li className="p-[0.5rem] hover:text-[#422716] hover:text-[1.1rem]">Students</li>
-         </Link>
-          <li className="p-[0.5rem] hover:text-[#422716] hover:text-[1.1rem]">Contact</li>
-         </ul>
+    <header className="w-full h-[6vh] sm:h-[10vh] bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <nav className="flex items-center justify-between h-full text-sm sm:text-base text-[#714326]">
+          {/* Logo */}
+          <Link
+            to="/"
+            className="font-bold text-lg sm:text-2xl text-[#714326] select-none"
+          >
+            SMS
+          </Link>
 
+          {/* Desktop Links */}
+          <ul className="hidden sm:flex sm:space-x-6">
+            <li>
+              <Link
+                to="/"
+                className="hover:text-[#422716] hover:scale-105 transition"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/students"
+                className="hover:text-[#422716] hover:scale-105 transition"
+              >
+                Students
+              </Link>
+            </li>
+            <li className="hover:text-[#422716] hover:scale-105 transition">
+              Contact
+            </li>
+          </ul>
 
-         <button className="sm:hidden" onClick={showLogoutDarkmode}>
-          <HiMenu className="text-[#714326]"/>
-          </button><div className="sm:hidden ">
-          {showButton && <div className="bg-[#775743] text-[#fff] flex flex-col items-center  justify-center absolute top-[7vh] right-0 w-[100px] h-[10vh] rounded-[1rem] z-50 mr-[1rem]">
-            {user.currentUser ? <Link to='/'><button className="
-          cursor-pointer text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] py-2 mb-[1rem] text-[white] 
-           border-none rounded-lg px-[1.2rem] hover:text-[0.9rem] p-[0.75rem] bg-[#714326] font-semibold"
-           onClick={handleLogout}>
-            Log out
-          </button>
-          </Link>: 
-           <Link to="/login">
-            <button className="
-          cursor-pointer text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] py-2 text-[#714326]  border-none rounded-[1rem] px-[1.2rem] hover:text-[0.9rem] p-[0.75rem] mb-[1rem] bg-[white] font-semibold">
-            Login
-          </button>
-          </Link>}
-          </div>}
-          </div>
-         
-          {/* login button */}
+          {/* Desktop Auth Button */}
           <div className="hidden sm:block">
-          {user.currentUser ? <Link to='/'><button className="
-          cursor-pointer text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] hover:bg-[white] outline hover:text-[#714326] border hover:border-brown-500 py-3 text-[white] 
-           border-none rounded-lg px-[1.2rem] hover:text-[0.9rem] p-[0.75rem] bg-[#714326] font-semibold"
-           onClick={handleLogout}>
-            Log out
+            {user.currentUser ? (
+              <Link to="/">
+                <button
+                  onClick={handleLogout}
+                  className="bg-[#714326] text-white py-2 px-4 rounded-lg hover:bg-white hover:text-[#714326] border transition font-semibold"
+                >
+                  Log out
+                </button>
+              </Link>
+            ) : (
+              
+              <Link to="/login">
+                <button className="bg-[#714326] text-white py-2 px-4 rounded-full hover:bg-white hover:text-[#714326] border transition font-semibold">
+                  Login
+                </button>
+              </Link>
+            )}
+          </div>
+
+          {/* Mobile Menu Icon */}
+          <button className="sm:hidden" onClick={toggleMenu}>
+            <HiMenu className="text-2xl" />
           </button>
-          </Link>: 
-           <Link to="/login">
-            <button className="
-          cursor-pointer text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] hover:bg-[white] outline border hover:text-[#714326] hover:border-brown-500 py-3 text-[white]  border-none rounded-full px-[1.2rem] hover:text-[0.9rem] p-[0.75rem] bg-[#714326] font-semibold">
-            Login
-          </button>
-          </Link>}
-         
-</div>
         </nav>
+
+        {/* Mobile Menu */}
+        {showButton && (
+          <div className="sm:hidden mt-3 p-4 bg-[#775743] text-white rounded-lg shadow-lg absolute right-4 top-[7vh] w-[140px] z-50">
+            {user.currentUser ? (
+              <div>
+                 <ul className="text-sm sm:hidden space-y-2 mb-2 text-center">
+                  <li>
+                    <Link
+                      to="/"
+                      className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[35px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
+                    >
+                      <button onClick={() => setShowButton(false)}> Home</button>
+                     
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/students"
+                      className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
+                    >
+                     <button onClick={() => setShowButton(false)}>Students</button> 
+                    </Link>
+                  </li>
+                  <li className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition">
+                   <button onClick={() => setShowButton(false)}>Contact</button> 
+                  </li>
+                </ul>
+                
+              <Link to="/">
+                <button
+                  onClick={handleLogout}
+                  className="block w-full py-2 text-sm bg-[white] text-[#775743] rounded-md hover:opacity-80 transition"
+                >
+                  Log out
+                </button>
+              </Link>
+              </div>
+            ) : (
+              <div>
+                <ul className="text-sm sm:hidden space-y-2 mb-2 text-center">
+                  <li>
+                    <Link
+                      to="/"
+                      className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[35px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
+                    >
+                      <button onClick={() => setShowButton(false)}>Home</button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/students"
+                      className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition"
+                    >
+                     <button onClick={() => setShowButton(false)}>Students</button> 
+                    </Link>
+                  </li>
+                  <li className="hover:text-[#422716] hover:scale-105 active:bg-[white] px-[27px] active:py-[5px] active:rounded-lg active:text-[#422716] transition">
+                   <button onClick={() => setShowButton(false)}>Contact</button> 
+                  </li>
+                </ul>
+                <Link to="/login">
+                  <button className="block w-full py-1 text-sm bg-white text-[#714326] rounded-md hover:opacity-90 transition">
+                    Login
+                  </button>
+                </Link>
+              </div>
+            )}
+          </div>
+        )}
       </div>
-    </div>
+    </header>
   );
 };
 
