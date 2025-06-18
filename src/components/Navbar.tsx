@@ -84,7 +84,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {showButton && (
-          <div className="sm:hidden mt-3 p-4 bg-[#775743] text-white rounded-lg shadow-lg absolute right-4 top-[7vh] w-[140px] z-50">
+          <div className="sm:hidden mt-1 p-5 bg-[#775743] text-white rounded-lg shadow-lg absolute right-4 top-[7vh] w-[300px] z-50">
             {user.currentUser ? (
               <div>
                  <ul className="text-sm sm:hidden space-y-2 mb-2 text-center">
